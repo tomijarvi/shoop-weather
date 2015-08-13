@@ -41,27 +41,27 @@ TEMPLATE = """<!DOCTYPE html>
     </style>
 </head>
 <body>
-<img src="URL">
+<p>Cloudy weather</p>
 </body>
 </html>"""
 
 
-def pug_view(request):
-    return HttpResponse(TEMPLATE.replace("URL", random.choice(PUGS)))
+def weather_view(request):
+    return HttpResponse(TEMPLATE))
 
 
-class PugAdminModule(AdminModule):
-    name = "Pugs"
+class WeatherAdminModule(AdminModule):
+    name = "Weather"
 
     def get_urls(self):
         return [
-            admin_url("pug/$", pug_view, name="pug")
+            admin_url("weather/$", pug_view, name="weather")
         ]
 
     def get_menu_entries(self, request):
         yield MenuEntry(
-            category="Pugs", text="Pug me!",
-            url="shoop_admin:pug", icon="fa fa-paw"
+            category="Weather", text="Weather!",
+            url="shoop_admin:weather", icon="fa fa-paw"
         )
 
     def get_menu_category_icons(self):

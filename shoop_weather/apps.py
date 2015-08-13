@@ -5,9 +5,9 @@ from shoop.apps import AppConfig
 
 
 class PugConfig(AppConfig):
-    name = "shoop_pugme"
+    name = "shoop_weather"
     provides = {
         "admin_module": [
-            "shoop_pugme.admin_module:PugAdminModule"
+            "shoop_weather.admin_module:WeatherAdminModule"
         ]
     }
